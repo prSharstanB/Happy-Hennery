@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22629CAF-E82A-4D47-90A4-D1DF0CC83C48}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hennery</RootNamespace>
+    <AssemblyName>Hennery</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Google-Noto-Emoji-Animals-Nature-22266-chicken.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="HamburgerMenu, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HamburgerMenu.0.1.0\lib\net40\HamburgerMenu.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.2\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.1.1345, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.5.1\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="check.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="check_vaccine.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="consum.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="foodItem.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hengar.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hengar_troop.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="henneryModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>henneryModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="henneryModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="henneryModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>henneryModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="import.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="import_item.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="item.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="item_store.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="item_store_consume.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="item_store_mix.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="machine.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mix.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mix_foodItem.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prepration.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="produce.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="repair.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="selectAgeAndProduce_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="selectHengarWithId_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="selectTroopCunsums_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_all_hengar_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_all_items_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_all_item_in_store_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_all_stores_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_all_troop_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_Current_troop_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_daeth_troop_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_empty_hengar_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_expiration_date_of_item_forStore_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_expiration_date_of_item_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_info_of_current_hengar_and_its_troop_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_itemQuantity_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_machine_notWork_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_machine_work_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_quntity_of_daily_consum_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_StoreInfo_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_StoreItems_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_store_of_hengar_and_current_items_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_the_better_supplier_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_troopConsumItems_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_troop_Preduces_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="select_troop_vaccine_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="store.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="troop.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TroopMustBeSold_Result.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vaccine.cs">
+      <DependentUpon>henneryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemWin\FeedCon.xaml.cs">
+      <DependentUpon>FeedCon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemWin\MachineCon.xaml.cs">
+      <DependentUpon>MachineCon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ItemWin\ProductCon.xaml.cs">
+      <DependentUpon>ProductCon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OperationsWin\ConsumptionCon.xaml.cs">
+      <DependentUpon>ConsumptionCon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OperationsWin\MixturesCon.xaml.cs">
+      <DependentUpon>MixturesCon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OperationsWin\OperationsWin.xaml.cs">
+      <DependentUpon>OperationsWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OperationsWin\SupplyingCon.xaml.cs">
+      <DependentUpon>SupplyingCon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\CurrentItemsQuantityCon.xaml.cs">
+      <DependentUpon>CurrentItemsQuantityCon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\EmptyHengars.xaml.cs">
+      <DependentUpon>EmptyHengars.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\InedibleCon.xaml.cs">
+      <DependentUpon>InedibleCon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\ItemsCon.xaml.cs">
+      <DependentUpon>ItemsCon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\ItemsQuantity.xaml.cs">
+      <DependentUpon>ItemsQuantity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\ReportWin.xaml.cs">
+      <DependentUpon>ReportWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\consumTroopCon.xaml.cs">
+      <DependentUpon>consumTroopCon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stores\HengarCon.xaml.cs">
+      <DependentUpon>HengarCon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stores\StoreCon.xaml.cs">
+      <DependentUpon>StoreCon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stores\StoreWin.xaml.cs">
+      <DependentUpon>StoreWin.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\ItemWin\ItemsWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\ItemWin\ItemsWin.xaml.cs">
+      <DependentUpon>ItemsWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\ItemWin\FeedCon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ItemWin\MachineCon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ItemWin\ProductCon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OperationsWin\ConsumptionCon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OperationsWin\MixturesCon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\OperationsWin\OperationsWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OperationsWin\SupplyingCon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Reports\CurrentItemsQuantityCon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reports\EmptyHengars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reports\InedibleCon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reports\ItemsCon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reports\ItemsQuantity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reports\ReportWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reports\consumTroopCon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Stores\HengarCon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Stores\StoreCon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Stores\StoreWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="henneryModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>henneryModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="henneryModel.edmx.diagram">
+      <DependentUpon>henneryModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\cancel-button.png" />
+    <Resource Include="Image\eye.png" />
+    <Resource Include="Image\home.png" />
+    <Resource Include="Image\information.png" />
+    <Resource Include="Image\security.png" />
+    <Resource Include="Image\settings-gears.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\icons8_Home_75px.png" />
+    <Resource Include="Image\icons8_New_Product_75px.png" />
+    <Resource Include="Image\icons8_Purchase_Order_75px.png" />
+    <Resource Include="Image\icons8_Search_64px_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\import3.png" />
+    <Resource Include="Image\farm.png" />
+    <Resource Include="Image\mix.png" />
+    <Resource Include="Image\machine.png" />
+    <Resource Include="Image\health.png" />
+    <Resource Include="Image\expiry2.png" />
+    <Resource Include="Image\expiry.png" />
+    <Resource Include="Image\quantity.png" />
+    <Resource Include="Image\empty-set-100.png" />
+    <Resource Include="Image\AddItem.png" />
+    <Resource Include="Image\consumable.png" />
+    <Resource Include="Image\ingredients.png" />
+    <Resource Include="Image\produce.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\create-new-pencil-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\analytics.png" />
+    <Resource Include="Fixicon-Farm-Chicken.ico" />
+    <Resource Include="Google-Noto-Emoji-Animals-Nature-22266-chicken.ico" />
+    <Resource Include="analytics.png" />
+    <Content Include="henneryModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>henneryModel.edmx</DependentUpon>
+      <LastGenOutput>henneryModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="henneryModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>henneryModel.edmx</DependentUpon>
+      <LastGenOutput>henneryModel.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Image\checkenImg.jpg" />
+    <Resource Include="Image\logo.png" />
+    <Resource Include="Image\chicken.png" />
+    <Resource Include="Image\hengar1.png" />
+    <Resource Include="Image\hengar.png" />
+    <Resource Include="Image\store.png" />
+    <Resource Include="Image\TotalItems.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="Hennery.Views.Reports.ItemsQuantity"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hennery.Views.Reports"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="900" FlowDirection="RightToLeft" Background="#F9F9F9">
+    <Grid>
+        <DataGrid x:Name="DgvItemQuantity"  IsReadOnly="True" 
+                      BorderBrush="#60CB95"
+                      BorderThickness="1"
+                      Margin="25 30 25 15"
+                      CanUserSortColumns="True"
+                      CanUserAddRows="False"
+                      AutoGenerateColumns="false"
+                      FontSize="14"
+                              
+                      materialDesign:DataGridAssist.CellPadding="10 8 8 8"
+                      materialDesign:DataGridAssist.ColumnHeaderPadding="7">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#F7EDEDED" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Header="اسم المادة" Binding="{Binding ItemName}"></DataGridTextColumn>
+                <DataGridTextColumn Width="*" Header="كمية الكلية للمادة" Binding="{Binding quantity}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

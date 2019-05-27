@@ -1,0 +1,119 @@
+﻿<UserControl x:Class="Hennery.Views.Reports.EmptyHengars"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Hennery.Views.Reports"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="900" FlowDirection="RightToLeft" Background="#F9F9F9">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="0.15*"></RowDefinition>
+            <RowDefinition Height="0.4*"></RowDefinition>
+        </Grid.RowDefinitions>  
+        <Grid Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Foreground="Black" Margin="50 20 0 0" FontFamily="/Aqary;component/Fonts/#M Unicode Noora" Width="auto" HorizontalContentAlignment="Center" Content="المحضرة"  FontSize="16" VerticalAlignment="Center"  />
+                <ToggleButton  Grid.Column="1" Background="Green" HorizontalAlignment="Left"  Margin="20 20 0 0"
+                               Style="{StaticResource MaterialDesignSwitchDarkToggleButton}"
+                               IsChecked="False" />
+            </Grid>
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Foreground="Black" Margin="47 20 0 0" FontFamily="/Aqary;component/Fonts/#M Unicode Noora" Width="auto" HorizontalContentAlignment="Center" Content="غير المحضرة"  FontSize="16" VerticalAlignment="Center"  />
+                <ToggleButton  Grid.Column="1" Background="Green" HorizontalAlignment="Left"  Margin="20 20 0 0"
+                               Style="{StaticResource MaterialDesignSwitchDarkToggleButton}"
+                               IsChecked="False" />
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Foreground="Black" Margin="50 20 0 0" FontFamily="/Aqary;component/Fonts/#M Unicode Noora" Width="auto" HorizontalContentAlignment="Center" Content="قيد التحضير"  FontSize="16" VerticalAlignment="Center"  />
+                <ToggleButton  Grid.Column="1" Background="Green" HorizontalAlignment="Left"  Margin="20 20 0 0"
+                               Style="{StaticResource MaterialDesignSwitchDarkToggleButton}"
+                               IsChecked="False" />
+            </Grid>
+        </Grid>
+        <Grid Row="1">
+            <DataGrid x:Name="TroopProduce"  IsReadOnly="True" 
+                      BorderBrush="#60CB95"
+                      BorderThickness="1"
+                      Margin="25 15 25 15"
+                      CanUserSortColumns="True"
+                      CanUserAddRows="False"
+                      AutoGenerateColumns="false"
+                      FontSize="14"     
+                      materialDesign:DataGridAssist.CellPadding="10 8 8 8"
+                      materialDesign:DataGridAssist.ColumnHeaderPadding="7">
+                <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="#F7EDEDED" />
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Header="اسم الهنغار" Binding="{Binding EmployeeNumber}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="مساحة الهنغار" Binding="{Binding Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="نوع الهنغار" Binding="{Binding Name}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <DatePicker Grid.Column="0"
+                        HorizontalAlignment="Stretch"  Width="300" 
+                        materialDesign:HintAssist.Hint="تاريخ بداية التحضير"
+                        Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+           
+            <DatePicker Grid.Column="1"
+                        HorizontalAlignment="Stretch"  Width="300" 
+                        materialDesign:HintAssist.Hint="تاريخ نهاية التحضير"
+                        Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+        </Grid>
+        <Grid Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBox  Grid.Row="0"
+                      TextWrapping="Wrap"  
+                      VerticalAlignment="Center" 
+                      HorizontalAlignment="Center"  Width="500"
+                      AcceptsReturn="True"
+                      VerticalScrollBarVisibility="Auto"
+                      SpellCheck.IsEnabled="True"
+                      materialDesign:HintAssist.Hint="الملاحظات"
+                      >
+            </TextBox>
+            <TextBox  Grid.Row="1" Margin="0 0 0 20"
+                      TextWrapping="Wrap"  
+                      VerticalAlignment="Center" 
+                      HorizontalAlignment="Center"  Width="500"
+                      AcceptsReturn="True"
+                      VerticalScrollBarVisibility="Auto"
+                      SpellCheck.IsEnabled="True"
+                      materialDesign:HintAssist.Hint="الاجرائيات"
+                      >
+            </TextBox>
+        </Grid>
+    </Grid>
+</UserControl>

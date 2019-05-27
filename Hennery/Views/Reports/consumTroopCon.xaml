@@ -1,0 +1,135 @@
+﻿<UserControl x:Class="Hennery.Views.Reports.consumTroopCon"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Hennery.Views.Reports"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="900" FlowDirection="RightToLeft" Background="#F9F9F9">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="0.8*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Foreground="Black"  FontFamily="/Aqary;component/Fonts/#M Unicode Noora" Width="auto" HorizontalContentAlignment="Center" Content="استهلاك الافواج الحالية"  FontSize="16" VerticalAlignment="Center"  />
+            <ToggleButton  Name="ToggleButton" Grid.Column="1" Background="Green" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="0 5 0 0"
+                           Style="{StaticResource MaterialDesignSwitchDarkToggleButton}"
+                            Checked="ToggleButton_OnChecked" Click="ToggleButton_OnClick" />
+        </Grid>
+        <Grid Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Row="1" Grid.Column="0">
+                <DataGrid x:Name="DgvTroopInfo"  IsReadOnly="True" 
+                          BorderBrush="#60CB95"
+                          BorderThickness="1"
+                          Margin="25 15 15 15"
+                          CanUserSortColumns="True"
+                          CanUserAddRows="False"
+                          AutoGenerateColumns="false"
+                          FontSize="14"
+                              
+                          materialDesign:DataGridAssist.CellPadding="10 8 8 8"
+                          materialDesign:DataGridAssist.ColumnHeaderPadding="7">
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#F7EDEDED" />
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="0.7*" Header="رقم الفوج" Binding="{Binding TroopNum}"></DataGridTextColumn>
+                        <DataGridTextColumn Width="0.5*" Header="نوعه" Binding="{Binding troopKind}"></DataGridTextColumn>
+                        <DataGridTextColumn Width="0.5*" Header="وزنه" Binding="{Binding troopWeight}"></DataGridTextColumn>
+                        <DataGridTextColumn Width="0.8*" Header="تاريخ استيراده" Binding="{Binding ImportDate}"></DataGridTextColumn>
+                        <DataGridTextColumn Width="*" Header="وفيات الحاصلة فيه" Binding="{Binding DeathNum}"></DataGridTextColumn>
+                        <DataGridTemplateColumn Width="0.4*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate >
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button       ToolTip="عرض"                  Width="20" Height="20"  materialDesign:ShadowAssist.ShadowDepth="Depth0"  BorderThickness="0" Name="ButtonShow" Click="ButtonShow_OnClick"  CommandParameter="{Binding Id}" >
+                                            <Button.Background>
+                                                <ImageBrush  ImageSource="/Image/eye.png">
+                                                </ImageBrush>
+                                            </Button.Background>
+
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            
+            <Grid Row="1" Grid.Column="1">
+                <DataGrid x:Name="DgvTroopConsums"  IsReadOnly="True" 
+                          BorderBrush="#60CB95"
+                          BorderThickness="1"
+                          Margin="15 15 25 15"
+                          CanUserSortColumns="True"
+                          CanUserAddRows="False"
+                          AutoGenerateColumns="false"
+                          FontSize="14"
+                              
+                          materialDesign:DataGridAssist.CellPadding="10 8 8 8"
+                          materialDesign:DataGridAssist.ColumnHeaderPadding="7">
+                    <DataGrid.Resources>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="Background" Value="#F7EDEDED" />
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="*" Header="تواريخ الاستهلاكات الفوج  " Binding="{Binding consumDate}"></DataGridTextColumn>
+                        <DataGridTemplateColumn Width="0.4*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate >
+                                    <StackPanel Orientation="Horizontal">
+                                        <Button   Name="BtnCunsum"    ToolTip="عرض"                  Width="20" Height="20"  materialDesign:ShadowAssist.ShadowDepth="Depth0"  BorderThickness="0"  Click="BtnCunsum_OnClick"  CommandParameter="{Binding Id}" >
+                                            <Button.Background>
+                                                <ImageBrush  ImageSource="/Image/eye.png">
+                                                </ImageBrush>
+                                            </Button.Background>
+
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+        <Grid Row="2">
+            <DataGrid x:Name="DgvTroopConsumItems"  IsReadOnly="True" 
+                      BorderBrush="#60CB95"
+                      BorderThickness="1"
+                      Margin="25 15 25 15"
+                      CanUserSortColumns="True"
+                      CanUserAddRows="False"
+                      AutoGenerateColumns="false"
+                      FontSize="14"
+                              
+                      materialDesign:DataGridAssist.CellPadding="10 8 8 8"
+                      materialDesign:DataGridAssist.ColumnHeaderPadding="7" SelectionChanged="TroopProduce_SelectionChanged">
+                <DataGrid.Resources>
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="#F7EDEDED" />
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Header="اسم المادة" Binding="{Binding itemName}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="كمية المادة" Binding="{Binding itemQuantity}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</UserControl>

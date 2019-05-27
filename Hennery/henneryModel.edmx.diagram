@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5f95b581fa5e4801ac3efa34ad2fffae" Name="Diagram1">
+        <EntityTypeShape EntityType="henneryModel.check_vaccine" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.check" Width="1.5" PointX="3" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.consum" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.foodItem" Width="1.5" PointX="0.75" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.hengar" Width="1.5" PointX="3.75" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.hengar_troop" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.import" Width="1.5" PointX="1.5" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.import_item" Width="1.5" PointX="1.5" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.item" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.item_store" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.item_store_consume" Width="1.5" PointX="7.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.item_store_mix" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.machine" Width="1.5" PointX="3.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.mix" Width="1.5" PointX="0.75" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.mix_foodItem" Width="1.5" PointX="3" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.prepration" Width="1.5" PointX="6" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.produce" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.repair" Width="1.5" PointX="6" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.store" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.Supplier" Width="1.5" PointX="1.5" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.sysdiagram" Width="1.5" PointX="7.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.troop" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="henneryModel.vaccine" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <AssociationConnector Association="henneryModel.FK_check_vaccine_check" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_check_vaccine_vaccine" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_checks_troop" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_consum_troop" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_item_store_consume_consum" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_mix_foodItem_foodItem" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_hengar_troop_hengar" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_prepration_hengar" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_hengar_troop_troop" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_import_item_import" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_import_Supplier" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_item_store_import_item" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_machine_import_item" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_troop_import_item1" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_produce_item1" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_vaccine_item" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_item_store_consume_item_store" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_item_store_mix_foodItem" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_item_store_mix_item_store" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_item_store_produce" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_item_store_store" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_item_store_mix_mix_foodItem" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_repair_machine" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_mix_foodItem_mix" ManuallyRouted="false" />
+        <AssociationConnector Association="henneryModel.FK_produce_troop" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
